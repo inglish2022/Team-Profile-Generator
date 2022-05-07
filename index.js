@@ -147,7 +147,9 @@ const addEmployee = () => {
         }
 
     ])
-};
+    .then(answers => {
+        
+});
 
 
 
