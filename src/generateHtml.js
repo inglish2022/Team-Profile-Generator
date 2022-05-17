@@ -5,61 +5,64 @@ const generateTeam = team => {
 <div class='col-12 card-deck'>
         <div class="card-header text-light text-center">
         <h3 class='card-title'>
-            < i class='fas fa-mug-hot mr-2' ></i > ${ manager.getRole() }</h3 >
-        </div >
+            <i class='fas fa-mug-hot mr-2'></i> ${manager.getRole()}</h3>
+        </div>
     <div class='card-body'>
         <ul class='list-group'>
-            <li class='list-group-item'>ID:  ${manager.getID()}</li>
-            <li class='list-group-item'>Email:  <a href="mailto:${manager.getEmail()}">$manager.getEmail()}</a></li>
+            <li class='list-group-item'>Name:  ${manager.getName()}</li>
+            <li class='list-group-item'>ID:  ${manager.getId()}</li>
+            <li class='list-group-item'>Email:  <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
             <li class='list-group-item'>Office Number:  ${manager.getOfficeNumber()}</li>
         </ul>
     </div>
-</div >
+</div>
         `;
     };
 
     //html for intern
-    const generateIntern = intern =>  {
+    const generateIntern = intern => {
         return `
     <div class='col-12 card-deck'>
         <div class="card-header text-light text-center">
         <h3 class='card-title'>
-            < i class='fas fa-mug-hot mr-2' ></i > ${ intern.getRole() }</h3 >
-        </div >
+            <i class='fas fa-mug-hot mr-2'></i> ${intern.getRole()}</h3>
+        </div>
     <div class='card-body'>
         <ul class='list-group'>
-            <li class='list-group-item'>ID:  ${intern.getID()}</li>
-            <li class='list-group-item'>Email:  <a href="mailto:${intern.getEmail()}">$manager.getEmail()}</a></li>
+            <li class='list-group-item'>Name:  ${intern.getName()}</li>
+            <li class='list-group-item'>ID:  ${intern.getId()}</li>
+            <li class='list-group-item'>Email:  <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
             <li class='list-group-item list-group-item-secondary '>School:  ${intern.getSchool()}</li>
-            <i class="fa-solid fa-school"></i>
+            
         </ul>
     </div>
-</div >
+</div>
 `;
     };
 
     // html for engineer
-    const generateEngineer = engineer =>  {
+    const generateEngineer = engineer => {
         return `
-        <div class = ='col-12 card-deck'>
+        <div class='col-12 card-deck'>
         <div class="card-header text-light text-center">
         <h3 class='card-title'>
-            < i class='fas fa-glasses mr-2' ></i > ${engineer.getRole()}</h3 >
-        </div >
+            <i class='fas fa-glasses mr-2'></i> ${engineer.getRole()}</h3>
+        </div>
     <div class='card-body'>
         <ul class='list-group'>
-            <li class='list-group-item'>ID:  ${engineer.getID()}</li>
-            <li class='list-group-item'>Email:  <a href="mailto:${manager.getEmail()}">$manager.getEmail()}</a></li>
-            <li class='list-group-item list-group-item-secondary'>GitHub:  ${manager.getgithub()}</li>
-            <i class="fa-brands fa-github" role="img"
+            <li class='list-group-item'>Name:  ${engineer.getName()}</li>
+            <li class='list-group-item'>ID:  ${engineer.getId()}</li>
+            <li class='list-group-item'>Email:  <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+            <li class='list-group-item list-group-item-secondary'>GitHub:  ${engineer.getgithub()}</li>
+            
         </ul>
     </div>
-</div >
+</div>
 `;
     };
 
 
-const html = [];
+    const html = [];
 
     html.push(team
         .filter(employee => employee.getRole() === "Manager")
@@ -81,9 +84,9 @@ const html = [];
 }
 
 
-module.exports = team =>  {
+module.exports = team => {
 
-    return`
+    return `
 
 <!DOCTYPE html>
 <html lang="en">
@@ -106,9 +109,10 @@ module.exports = team =>  {
             <div class="h-100 d-inline-block jumbotron mb-3 team">
                 <h1 class="text-center text-white">Meet the Team</h1>
             </div>
+            ${generateTeam(team)}
         </div>
     </div>
-    </body>
-    </html>
+</body>
+</html>
     `;
 };

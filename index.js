@@ -236,8 +236,9 @@ const addEngineer = () => {
 
 const writeFile = () => {
 
+    console.log(employeeArray)
     
-    fs.writeFile('./src/generateHtml.js', "", err => {
+    fs.writeFile('./dist/index.html', generateHtml(employeeArray), err => {
         if (err) {
             console.log(err);
             return;
@@ -249,4 +250,4 @@ const writeFile = () => {
 
 }
 
-addManager();
+addManager()
